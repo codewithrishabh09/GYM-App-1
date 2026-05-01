@@ -7,14 +7,18 @@ export default function Hero() {
         <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
             {/* Cinematic Background Layer */}
             <div className="absolute inset-0 z-0">
-                <motion.img
+                <motion.video
                     initial={{ scale: 1.2, opacity: 0 }}
                     animate={{ scale: 1, opacity: 0.6 }}
                     transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
-                    src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2075&auto=format&fit=crop"
-                    alt="Luxury Gym Interior"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-full object-cover"
-                />
+                >
+                    <source src="/supplements/background.mp4" type="video/mp4" />
+                </motion.video>
                 <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background opacity-80"></div>
 

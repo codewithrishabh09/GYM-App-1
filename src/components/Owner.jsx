@@ -84,13 +84,19 @@ export default function Owner() {
 
                         {/* Social Links */}
                         <div className="flex space-x-6">
-                            {[Mail, Instagram, Twitter].map((Icon, idx) => (
+                            {[
+                                { Icon: Mail, href: "#" },
+                                { Icon: Instagram, href: "https://www.instagram.com/gym__trainer/" },
+                                { Icon: Twitter, href: "#" }
+                            ].map((social, idx) => (
                                 <a
                                     key={idx}
-                                    href="#"
+                                    href={social.href}
+                                    target={social.href !== "#" ? "_blank" : undefined}
+                                    rel={social.href !== "#" ? "noopener noreferrer" : undefined}
                                     className="h-12 w-12 rounded-full bg-background border border-white/10 flex items-center justify-center text-white hover:text-accent hover:border-accent transition-all duration-300 hover:shadow-red-glow"
                                 >
-                                    <Icon size={20} />
+                                    <social.Icon size={20} />
                                 </a>
                             ))}
                         </div>
@@ -101,5 +107,6 @@ export default function Owner() {
         </section>
     );
 }
+
 
 
